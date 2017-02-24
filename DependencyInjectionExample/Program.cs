@@ -11,7 +11,16 @@ namespace DependencyInjectionExample
             Console.Write("Enter Students Name: ");
             firstStudent.Name = Console.ReadLine();
             Console.Write("Enter Students Age: ");
-            firstStudent.Age = Convert.ToInt32(Console.ReadLine());
+            var temp = Convert.ToInt32(Console.ReadLine());
+
+            var ageLimit = new LoggerOne();
+            while (temp < ageLimit)
+            {
+                Console.WriteLine("Sorry to young!");
+                Console.Write("Enter Students Age: ");
+                temp = Convert.ToInt32(Console.ReadLine());
+            }
+
             Console.WriteLine();
 
             var secondStudent = new Student(new LoggerOne());

@@ -14,12 +14,9 @@ namespace DependencyInjectionExample
         {
             set
             {
-                if (value < LoggerOne.AgeLimit)
-                    Console.WriteLine("Sorry to young!");
-                else
-                {
-                    _age = value;
-                }
+               // An object reference is required for the none static field, method or 
+               // property 'Shared.LoggerOne.AgeLimit.get'                
+                _age = value;
             }
         }
 
