@@ -14,7 +14,7 @@ namespace DependencyInjectionExample
         {
             set
             {
-                if (value < AgeLimit)
+                if (value < LoggerOne.AgeLimit)
                     Console.WriteLine("Sorry to young!");
                 else
                 {

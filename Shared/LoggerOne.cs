@@ -9,6 +9,6 @@ namespace Shared
             Console.WriteLine(text);
         }
 
-        public int AgeLimit { get; set; }
+        public  int AgeLimit { get; set; }
     }
 }

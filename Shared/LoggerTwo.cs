@@ -2,7 +2,7 @@
 
 namespace Shared
 {
-    public class LoggerTwo : ILogger
+    public class LoggerTwo: ILogger
     {
         public void WriteToLog(string text)
         {
