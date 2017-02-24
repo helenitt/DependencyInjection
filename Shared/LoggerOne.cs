@@ -1,12 +1,14 @@
 ﻿using System;
 
-namespace DependencyInjection
+namespace Shared
 {
-    class LoggerOne : ILogger
+    public class LoggerOne : ILogger
     {
         public void WriteToLog(string text)
         {
             Console.WriteLine(text);
         }
+
+        public int AgeLimit { get; set; }
     }
 }
