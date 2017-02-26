@@ -7,30 +7,31 @@ namespace DependencyInjectionExample
     {
         public static void Main(string[] args)
         {
-            var firstStudent = new Student(new LoggerOne());
+            var firstStudent = new Student(new LoggerOne(), new Config());
             Console.Write("Enter Students Name: ");
             firstStudent.Name = Console.ReadLine();
             Console.Write("Enter Students Age: ");
-            var temp = Convert.ToInt32(Console.ReadLine());
+            var age = Convert.ToInt32(Console.ReadLine());
 
-            var ageLimit = new LoggerOne();
-            while (temp < ageLimit)
+            var configAge = new Config();
+            var ageLimit = Int32.Parse(configAge);
+            while (age < ageLimit)
             {
                 Console.WriteLine("Sorry to young!");
                 Console.Write("Enter Students Age: ");
-                temp = Convert.ToInt32(Console.ReadLine());
+                age = Convert.ToInt32(Console.ReadLine());
             }
 
             Console.WriteLine();
 
-            var secondStudent = new Student(new LoggerOne());
+            var secondStudent = new Student(new LoggerOne(), new Config());
             Console.Write("Enter Students Name: ");
             secondStudent.Name = Console.ReadLine();
             Console.Write("Enter Students Age: ");
             secondStudent.Age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
 
-            var thirdStudent = new Student(new LoggerOne());
+            var thirdStudent = new Student(new LoggerOne(), new Config());
             Console.Write("Enter Students Name: ");
             thirdStudent.Name = Console.ReadLine();
             Console.Write("Enter Students Age: ");

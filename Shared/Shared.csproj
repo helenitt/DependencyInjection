@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="IConfig.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="LoggerOne.cs" />
     <Compile Include="LoggerTwo.cs" />
