@@ -18,7 +18,7 @@ namespace DependencyInjectionExample
 
             while (sentinel.Equals("y"))
             {
-                student = new Student(new LoggerOne(), new Config());
+                student = new Student(new LoggerOne(), configAge);
                 Console.Write("Enter Students Name: ");
                 student.Name = Console.ReadLine();
                 Console.Write("Enter Students Age: ");
@@ -34,7 +34,7 @@ namespace DependencyInjectionExample
                 sentinel = Console.ReadLine();
             }
 
-            student = new Student(new LoggerTwo(), new Config());
+            student = new Student(new LoggerTwo(), configAge);
             Console.Write("\nEnter Students Name: ");
             student.Name = Console.ReadLine();
             Console.Write("Enter Students Age: ");
