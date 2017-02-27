@@ -7,39 +7,41 @@ namespace DependencyInjectionExample
     {
         public static void Main(string[] args)
         {
-            var firstStudent = new Student(new LoggerOne(), new Config());
-            Console.Write("Enter Students Name: ");
-            firstStudent.Name = Console.ReadLine();
-            Console.Write("Enter Students Age: ");
-            var age = Convert.ToInt32(Console.ReadLine());
-
+            Student student; 
             var configAge = new Config();
-            var ageLimit = Int32.Parse(configAge);
-            while (age < ageLimit)
+            var ageLimit = Int32.Parse(configAge.AgeLimit);
+            var sentinel = "y";
+            int age;
+
+            Console.WriteLine("\n***************\nStudent Creator\n***************");
+            Console.WriteLine("\nAge Limit is: {0}\n", ageLimit);
+
+            while (sentinel.Equals("y"))
             {
-                Console.WriteLine("Sorry to young!");
+                student = new Student(new LoggerOne(), new Config());
+                Console.Write("Enter Students Name: ");
+                student.Name = Console.ReadLine();
                 Console.Write("Enter Students Age: ");
                 age = Convert.ToInt32(Console.ReadLine());
+                while (age < ageLimit)
+                {
+                    Console.Write("\nSorry too young! Enter Students Age: ");
+                    age = Convert.ToInt32(Console.ReadLine());
+                }
+
+                Console.WriteLine("\nNew Student Created\nName: {0} \nAge: {1}", student.Name, age);
+                Console.Write("\nWould you like to add a student? y/n: ");
+                sentinel = Console.ReadLine();
             }
 
-            Console.WriteLine();
-
-            var secondStudent = new Student(new LoggerOne(), new Config());
-            Console.Write("Enter Students Name: ");
-            secondStudent.Name = Console.ReadLine();
+            student = new Student(new LoggerTwo(), new Config());
+            Console.Write("\nEnter Students Name: ");
+            student.Name = Console.ReadLine();
             Console.Write("Enter Students Age: ");
-            secondStudent.Age = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
+            age = Convert.ToInt32(Console.ReadLine());
 
-            var thirdStudent = new Student(new LoggerOne(), new Config());
-            Console.Write("Enter Students Name: ");
-            thirdStudent.Name = Console.ReadLine();
-            Console.Write("Enter Students Age: ");
-            thirdStudent.Age = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-
-            Console.WriteLine("\n\nThe Students Names: {0}, {1} and {2}"
-                              , firstStudent.Name, secondStudent.Name, thirdStudent.Name);
+            Console.WriteLine("\nNew Student Created\nName: {0} \nAge: {1}", student.Name, age);
+            
             Console.ReadLine();
         }
     }

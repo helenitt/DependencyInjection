@@ -1,4 +1,6 @@
-﻿namespace Shared
+﻿using System.Configuration;
+
+namespace Shared
 {
     public class Config : IConfig
     {
@@ -6,13 +8,13 @@
 
         public Config()
         {
-            _ageLimit = DependencyInjectionExample.App.config.AppSettings["AgeLimit"];
+            _ageLimit = ConfigurationManager.AppSettings["AgeLimit"];
         }
 
         public string AgeLimit
         {
             get { return _ageLimit; }
-            set { _ageLimit = AgeLimit; }
+            set { _ageLimit = value; }
         }
     }
 }

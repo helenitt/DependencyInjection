@@ -6,9 +6,7 @@ namespace Shared
     {
         public void WriteToLog(string text)
         {
-            Console.WriteLine("***********\n {0}\n***********", text);
+            Console.WriteLine("\n******************** {0}\n********************", text);
         }
-
-        public int AgeLimit { get; set; }
     }
 }

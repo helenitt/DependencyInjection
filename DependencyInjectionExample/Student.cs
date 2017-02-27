@@ -15,7 +15,7 @@ namespace DependencyInjectionExample
             //int.TryParse(config.AgeLimit, out _age);
             _age = Int32.Parse(config.AgeLimit);
             //_age = Convert.ToInt32(config.AgeLimit);
-            logger.WriteToLog("New Student Created");
+            logger.WriteToLog("\nCreating New Student");
         }
     }
 }
